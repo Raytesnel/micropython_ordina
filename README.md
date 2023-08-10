@@ -22,6 +22,8 @@ Minimum requirements
 In pycharm go to settings -> plugins and search for micropython (from JetBrains) install the plugin.
 before we can programm in micropython we need to tell the IDE that we are gonna use micropython instead of normal python. to do so
 Make a new project in pycharm (if not already done) and go to settings -> languages & Frameworks -> MicroPython. Enebale the 'Enable Micropython support', device type: is ESP8266 and as last enable the Auto-detect device path. press OK/Apply
+if you go to a pythong file (like main.py) pycharm will ask you to install the missing packages of micropython, and install them.
+'pyserial>=3.5,4.0', 'docopt>=0.6.2,0.7', 'adafruit-ampy>=1.0.5,1.1'
 
 ## Connecting to the ESP32
 
@@ -29,7 +31,7 @@ If everything is okay you see a big M logo next to the Terminal. that is the Mic
 by clicking it you have 3 buttons
 - Refresh the connection to the device
 - Stop the communication with the device.
-- Delete the connection with the device.
+- clear(bin icon) clears the terminal screen.
 
 with the refresh button it tries to connect with the ESP device and you should see our trusting python console >> :)
 Be aware that this is a python terminal from the device, not from your computer.
