@@ -13,51 +13,82 @@ the Goal of this excersize is to get the Repl on the device plus blinking a led 
 ## Requirements Hello World:
 Minimum requirements
 - ESP32
-- Pycharm / VSCode (VSCode is not preferred)
-  - micropython plugin (pycharm) / Pymkr (VSCode)
-- Micro usb (with data)
+- Pycharm (v2023.1.4, newer versions plugin doesn't work :unamused: ) or VS code
+  - micropython plugin (pycharm) / [RT-Thread MicroPython](https://marketplace.visualstudio.com/items?itemName=RT-Thread.rt-thread-micropython) (VScode)
+- Micro usb (with data wires)
 
-## Install Micropython plugin
+## Install Micropython plugin (pycharm)
 
 In pycharm go to settings -> plugins and search for micropython (from JetBrains) install the plugin.
-before we can programm in micropython we need to tell the IDE that we are gonna use micropython instead of normal python. to do so
-Make a new project in pycharm (if not already done) and go to settings -> languages & Frameworks -> MicroPython. Enebale the 'Enable Micropython support', device type: is ESP8266 and as last enable the Auto-detect device path. press OK/Apply
-if you go to a pythong file (like main.py) pycharm will ask you to install the missing packages of micropython, and install them.
+before we can program in micropython we need to tell the IDE that we are gonna use micropython instead of normal python. to do so
+Make a new project in pycharm (if not already done) and go to settings -> languages & Frameworks -> MicroPython. enable the 'Enable Micropython support', device type: is ESP8266 and as last enable the Auto-detect device path. press OK/Apply
+if you go to a python file (like main.py) pycharm will ask you to install the missing packages of micropython, and install them.
 'pyserial>=3.5,4.0', 'docopt>=0.6.2,0.7', 'adafruit-ampy>=1.0.5,1.1'
 
-## Connecting to the ESP32
-
+### Connecting to the ESP32
 If everything is okay you see a big M logo next to the Terminal. that is the Micropython terminal.
 by clicking it you have 3 buttons
 - Refresh the connection to the device
 - Stop the communication with the device.
 - clear(bin icon) clears the terminal screen.
 
-with the refresh button it tries to connect with the ESP device and you should see our trusting python console >> :)
-Be aware that this is a python terminal from the device, not from your computer.
-from here you can test sensors, actuators. 
+to upload files, the normal run command (play button) will upload/replace it to the device
 
-for example 
+## Install Micropython plugin (VScode)
+VScode --> Extension menu search for Micropython and select the RT-Thread Micropython (I know..)
+install it, reload and done. 
+to start a micropython project you need to make a new micropython project by clicking the plus icon in the left bottom corner("create micropython project"), follow steps to make and select folder and done.
+
+### Connecting to the ESP32
+In the left bottom corner you can (from left to right)
+- create new micropython project (already done)
+- (Dis)connect device
+- Sync working directory with device (1 way uploading to device)
+- Run current file on device(nice debugging tool)
+- Code suggestions (don't know what it does)
+- Stop microcontroller program, (kind of ctrl-C)
+
+when selecting a text you can right mouseclick to only run the selected text on the device.(really nice)
+
+
+## Micropython REPL
+One of the nice features is the python REPL on the microcontroller, here we can test code snippets or type and communicate with the device
+to enter the REPL, connect with the device (pycharm refresh, VScode connect) and you will see somthing happening to the terminal
+if all went right you see our nice `>>` from the microcontroller. if you see weird stuff, try pressing CTRL-Cv(maybe it was stuck in a program)
+most used keys
+- CTRL-C --> stop current program on device
+- CTRL-D --> start boot.py and main.py
+- CTRL-A --> enter Raw REPL (needed to upload files)
+CTRL -C & -D is mostly used when debugging, CTRL-A is mostly used by the plugins.
+
+
+From REPL we can already test some sensors, actuators.
+for example if you are in the REPL of the microcontroller you can type:
 - `import machine` Imports a micropython specific lib for the use of pins, wifi, PWM etc.
 - `led_pin = machine.Pin(2, machine.Pin.OUT)` Set the correct pin as a output pin (onboard led pin is 2)
 - `led_pin.value(1)` Turn the led off
 - `led_pin.value(0)` Turn the led on
-Congratz, if everything is correct you have done your first embedded programm with python.
+
+Congratz, if everything is correct you have made the led blink :smile:.
 
 # Write Hello World
-to let the device behave as it should when powering on there should be some files writen to the device. 
-on the device there are minimal 2 files 
+To let the device behave as it should when powering on there should be some files writen to the device. 
+on the device there are minimal 2 files (normally) 
 - boot.py
 - main.py
+
 boot.py is mostly not used with small projects, boot.py is run when powering on the device / rebooting the device you can handle things here like updates, import stuff stetting some important settings etc, you can see the boot.py as a setup of the device before entering the main programm.
-After it completes boot.py it will  automatticly run main.py, you don't have to call main.py from boot.py
+After it completes boot.py it will automatically run 
+main.py(and functions of boot.py is still available to main.py), you don't have to call main.py from boot.py
 
-lets make a boot.py and main.py file in the root system and write our first programm.
-Write a main loop where it prints in the terminal "hello world" and blink the onboard led to notify the user that message is been send.
+let's make a boot.py and main.py file in the project folder(locally) and write our first program.
 
-Good Job, fiddle with it till the next assignment, 
+Write a main loop where it prints in the terminal "hello world" and blink the onboard led to notify the user that message is been sent.
+
 For more information what Pins you can use and what to do with it see picture below.
-for example make the onboard led send morse code synchronised with the print statements in the REPL (terminal).
+
+After you succeeded, fiddle with it till the next assignment, 
+for example make the onboard led send morse code.
 
 ![link to ESP32 D1 mini pin layout](https://www.hobbyelectronica.nl/wp-content/uploads/2021/11/D1_mini_esp32_schema.jpg)
 
@@ -71,12 +102,12 @@ Here we are gonna make 3 different projects (choose one with your group to work 
 
 
 # IoT 
-What i Personally like from microcontrollers are 2 main things, 
+What I Personally like from microcontrollers are 2 main things, 
 
 1: fast power down and start up. which is great for battery powered projects. (check for more information [deepsleep](https://docs.micropython.org/en/latest/esp32/quickref.html#deep-sleep-mode)
 
 2: Wifi / BLE capabilities, which you can make sepperate small microcontrollers into a huge complex system.
-for now we focus on WiFi and especially on the communication protocol [MQTT - liberary](https://github.com/peterhinch/micropython-mqtt). MQTT is a protocol to subscibe to topics and publish messages to a topic without to much hassle.
+for now, we focus on Wi-Fi and especially on the communication protocol [MQTT - liberary](https://github.com/peterhinch/micropython-mqtt). MQTT is a protocol to subscibe to topics and publish messages to a topic without to much hassle.
 
 for example a temperature sensor publishes `30°C` on topic `/livingroom/temperature` while the radiator is listening also on the same topic, therefore when getting the `30°C` the radiator can turn off the radiator.
 ![content](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/MQTT-Diagram.png?w=750&quality=100&strip=all&ssl=1)
