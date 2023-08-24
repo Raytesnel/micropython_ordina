@@ -25,6 +25,10 @@ Make a new project in pycharm (if not already done) and go to settings -> langua
 if you go to a python file (like main.py) pycharm will ask you to install the missing packages of micropython, and install them.
 'pyserial>=3.5,4.0', 'docopt>=0.6.2,0.7', 'adafruit-ampy>=1.0.5,1.1'
 
+In project structure settings of Pycharm, please put all .venv and other folders to exclude otherwise
+this will also be uploaded to the device.
+
+
 ### Connecting to the ESP32
 If everything is okay you see a big M logo next to the Terminal. that is the Micropython terminal.
 by clicking it you have 3 buttons
