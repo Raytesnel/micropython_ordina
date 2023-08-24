@@ -89,6 +89,9 @@ let's make a boot.py and main.py file in the project folder(locally) and write o
 
 Write a main loop where it prints in the terminal "hello world" and blink the onboard led to notify the user that message is been sent.
 
+note: if the program finishes (or you stop is with CTRL-C) all variables/object etc. are still in memory and can be used in the REPL
+
+
 For more information what Pins you can use and what to do with it see picture below.
 
 After you succeeded, fiddle with it till the next assignment, 
