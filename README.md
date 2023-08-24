@@ -65,9 +65,9 @@ for example make the onboard led send morse code synchronised with the print sta
 # Car Project
 
 Here we are gonna make 3 different projects (choose one with your group to work on.)
-- [Drive Team](#drive-team)
-- [Sensor Team](#input-team)
-- [Feedback Team](#feedback-team)
+- [Drive Team](/module_drive/README.md#drive-team)
+- [Sensor Team](/module_input/README.md#input-team)
+- [Feedback Team](/module_feedback/README.md#feedback-team)
 
 
 # IoT 
