@@ -40,11 +40,13 @@ more info on a special lib of micropython and these leds
 [//]: # (## done? try the servo motor:)
 
 [//]: # ()
+
 [//]: # (we can also show how fast somthing is with servo.)
 
 [//]: # (servos have also 3 wires.)
 
 [//]: # ()
+
 [//]: # (- red -> +)
 
 [//]: # (- brown -> ground)
@@ -52,6 +54,7 @@ more info on a special lib of micropython and these leds
 [//]: # (- yellow -> signal)
 
 [//]: # ()
+
 [//]: # (This small servomotor is controlled using a pulse width modulated &#40;PWM&#41; signal with a frequency of 50 Hz, i.e. one pulse)
 
 [//]: # (every 20ms. The position of the actuator is determined by the duration of the pulses, usually varying between 1ms and)
@@ -59,6 +62,7 @@ more info on a special lib of micropython and these leds
 [//]: # (2ms.)
 
 [//]: # ()
+
 [//]: # (max what this servo can is 180° rotation. so in short, with a freq of 50hz, and full 2.4 ms is 180° while 1ms with 50hz)
 
 [//]: # (is 0° position. min a normal duty cycle is with 1023 &#40;full pwm&#41; so you need to recalculate the `duty` to the correct)
@@ -66,5 +70,6 @@ more info on a special lib of micropython and these leds
 [//]: # (duty.)
 
 [//]: # ()
+
 [//]: # ([PWM micropython]&#40;https://docs.micropython.org/en/latest/esp32/tutorial/pwm.html&#41;)
 
