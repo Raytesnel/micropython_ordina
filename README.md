@@ -12,7 +12,7 @@ the Goal of this excersize is to get the Repl on the device plus blinking a led 
 
 ## Requirements Hello World:
 Minimum requirements
-- ESP32
+- ESP32 (with micropython installed, if you want to install your own -> [micropython docs](https://docs.micropython.org/en/latest/esp32/tutorial/intro.html))
 - Pycharm (v2023.1.4, newer versions plugin doesn't work :unamused: ) or VS code
   - micropython plugin (pycharm) / [RT-Thread MicroPython](https://marketplace.visualstudio.com/items?itemName=RT-Thread.rt-thread-micropython) (VScode)
 - Micro usb (with data wires)
