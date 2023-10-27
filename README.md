@@ -120,7 +120,7 @@ For more information what Pins you can use and what to do with it see picture be
 After you succeeded, fiddle with it till the next assignment,
 for example make the onboard led send morse code.
 
-![link to ESP32 D1 mini pin layout](https://www.hobbyelectronica.nl/wp-content/uploads/2021/11/D1_mini_esp32_schema.jpg)
+![link to ESP32 nodemcu pin layout]([https://www.hobbyelectronica.nl/wp-content/uploads/2021/11/D1_mini_esp32_schema.jpg](https://www.waveshare.com/img/devkit/accBoard/NodeMCU-32S/NodeMCU-32S-details-3.jpg))
 
 # Car Project
 
