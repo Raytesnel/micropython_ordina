@@ -120,7 +120,8 @@ For more information what Pins you can use and what to do with it see picture be
 After you succeeded, fiddle with it till the next assignment,
 for example make the onboard led send morse code.
 
-![link to ESP32 nodemcu pin layout](https://www.waveshare.com/img/devkit/accBoard/NodeMCU-32S/NodeMCU-32S-details-3.jpg)
+![NodeMCU-32S-details-3](https://github.com/Raytesnel/micropython_ordina/assets/66633722/1ac5c0e8-ff98-4b04-91a8-1eea7eee7402)
+
 
 # Car Project
 
