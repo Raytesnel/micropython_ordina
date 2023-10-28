@@ -1,29 +1,29 @@
 # Drive Team
 
-In this team we are going to actuate a stepper motor.
-the goal is to make a script that awaits for input from for example the user to actuate the motor for a specific speed
-and distance/rotations.
+With this team, we are going to actuate a stepper motor. The goal is to make a script that awaits input from e.g. the
+user to actuate the motor with a specific speed or a certain distance/number of rotations.
 
-## Motor Requirements:
+## List of materials:
 
 - Stepper motor (nema 17)
-- 12 V power adaptor
-- stepper driver (TMC2208/TMC2209)
-- dupont cables (female - male 5-7x)
-  or
+- 12V Power adapter
+- Stepper driver (TMC2208/TMC2209)
+- Dupont cables (female - male 5-7x)
+
+or
+
 - DC motor
-- 12 V power adaptor
-- H-brug module
-- dupont cables (female - male 3x)
+- 12V Power adapter
+- H-bridge module
+- Dupont cables (female - male 3x)
 
 ## Summary Stepper Hardware
 
-for the stepper motor you get a [TMC2209](https://learn.watterott.com/silentstepstick/pinconfig/tmc2209/) module pressed
-on a developer board for stepper-drivers to make your life now easier.
-it works as follows,
+For the stepper motor you get a [TMC2209](https://learn.watterott.com/silentstepstick/pinconfig/tmc2209/) module attached
+to a developer board for stepper-drivers to make your life easier. It works as follows:
 
 - dir(rection) pin: give a low or high input to rotate left or right.
-- step pin: everytime this pin gets a pulse (low,high,low) the motor will do a small step.
+- step pin: everytime this pin gets a pulse (low, high, low) the motor will do a small step.
 - en(able) pin: this makes the motor powered on or off, when the pin is LOW the motor is engaged. (depends on stepper
   driver if LOW or HIGH)
 - VCC(red) pin: this is the logic voltage 3.3 - 5v
@@ -39,9 +39,9 @@ every step of a motor is devided by 1,8 of 16 smaller steps.
 the Stepper motor is a Nema 17 where it as 200 steps per rotation
 so with microstepping a full rotation is 200*16 steps.
 
-## Summary Of Steps Stepper Motor (guide not mandatory) :
+## Summary Of Steps Stepper Motor (guide not mandatory)
 
-- (bonus) import logging (see [importing mip packages](#importing-mip-packages) )
+- (bonus) import logging (see [Importing mip packages](https://github.com/Raytesnel/micropython_ordina/blob/main/README.md#other-libraries))
 - Make motor turn with while/for loop (make it alive)
 - Make callback timer to not obstruct the rest of the program when sending pulses to the motor
 - Make sure you can receive input from a user (distance & speed)
