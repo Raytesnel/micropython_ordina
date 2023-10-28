@@ -144,6 +144,7 @@ Personally, I think the two main strengths of microcontrollers are:
    that allows you to subscibe to topics and publish messages to a topic without too much hassle.
    For example, a temperature sensor publishes `30°C` on topic `/livingroom/temperature`, while the radiator is listening on
    the same topic. Therefore, the radiator can switch off when it receives the `30°C`.
+   
    ![content](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/MQTT-Diagram.png?w=750&quality=100&strip=all&ssl=1)
 
 ## Assignment
