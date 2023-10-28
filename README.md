@@ -1,6 +1,6 @@
 # MicroPython Ordina
 
-A nice demo day about MicroPython with the use of ESP32.
+A nice demo day about MicroPython with the use of ESP32 boards.
 
 For the sake of time, the ESP32s that are handed to you are already flashed with MicroPython.
 If you want to know more on how to do this and what happened, see:
