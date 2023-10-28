@@ -135,7 +135,7 @@ The group will be split in small team, that will work on 3 different projects (c
 
 ## IoT
 
-Personally, the two main strengths of microcontrollers are:
+Personally, I think the two main strengths of microcontrollers are:
 
 1. Fast start up and power down, which is great for battery-powered projects. (Check
    [deepsleep](https://docs.micropython.org/en/latest/esp32/quickref.html#deep-sleep-mode) for more information.)
