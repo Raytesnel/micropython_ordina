@@ -165,4 +165,4 @@ Good luck! And I hope you enjoy it :)
 ## Other libraries
 
 - More used MQTT library, but bigger [MQTT lib github](https://github.com/peterhinch/micropython-mqtt/tree/master/mqtt_as)
-- Installing Mip Packages [MicroPython pip library](https://github.com/micropython/micropython-lib)
+- Importing Mip Packages [MicroPython pip library](https://github.com/micropython/micropython-lib)
