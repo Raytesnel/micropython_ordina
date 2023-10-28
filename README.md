@@ -32,6 +32,7 @@ In PyCharm go to file -> settings -> plugins and search for MicroPython (from Je
 Before we can program with MicroPython we need to tell the IDE that we are gonna use MicroPython instead of normal python.
 
 To do so:
+
 - Make a new project in PyCharm (if not already done).
 - Go to file -> settings -> languages & Frameworks -> MicroPython.
 - Enable the 'Enable Micropython support'-option, set the device type to ESP8266 and enable 'Auto-detect
@@ -46,6 +47,7 @@ To do so:
 If everything is okay, you now see a big "M" next to your integrated terminal. This is the MicroPython terminal.
 
 If you click it you have 3 buttons:
+
 - Refresh the connection to the device.
 - Stop the communication with the device.
 - Clear the terminal screen (bin icon).
@@ -64,6 +66,7 @@ corner("create micropython project"), follow steps to make and select folder and
 ### Connecting to the ESP32
 
 In the left bottom corner you can (from left to right):
+
 - Create a new micropython project (already done).
 - (Dis)connect to device.
 - Sync your local working directory with device (1 way uploading to device).
@@ -81,6 +84,7 @@ and you will see somthing happening in the terminal. If all went right, you now 
 microcontroller. If you see weird stuff, try pressing CTRL-C (maybe the microcontroller was stuck in a program).
 
 Most used key combinations:
+
 - CTRL-C -> stop current program on device
 - CTRL-D -> start boot.py and main.py
 - CTRL-A -> enter Raw REPL (needed to upload files)
@@ -88,6 +92,7 @@ Most used key combinations:
 CTRL-C & -D are mostly used during debugging, CTRL-A is mostly used by the plugins.
 
 From the REPL we can already test some sensors and actuators. For example, you can type the following:
+
 - `import machine` -> Imports a MicroPython-specific library for the use of pins, WiFi, PWM etc.
 - `led_pin = machine.Pin(2, machine.Pin.OUT)` -> Sets the correct pin as a output pin (onboard led pin is 2).
 - `led_pin.value(1)` -> Turns the led off.
@@ -99,6 +104,7 @@ Congratz, if everything is correct you have made the led blink :smile:!
 
 To let the device behave as it should when powering on, some files should be writen to the device. There normally are
 at least 2 files on the microcontroller:
+
 - boot.py
 - main.py
 
@@ -121,46 +127,41 @@ After you succeed, fiddle with it until the next assignment. For example, make t
 
 # Car Project
 
-We will make 3 different projects (choose one with your group to work on.)
+The group will be split in small team, that will work on 3 different projects (choose one to work on):
 
 - [Drive Team](/module_drive/README.md#drive-team)
 - [Sensor Team](/module_input/README.md#input-team)
 - [Feedback Team](/module_feedback/README.md#feedback-team)
 
-# IoT
+## IoT
 
-I personally like two main things about microcontrollers:
+Personally, the two main strengths of microcontrollers are:
+
 1. Fast start up and power down, which is great for battery-powered projects. (Check
    [deepsleep](https://docs.micropython.org/en/latest/esp32/quickref.html#deep-sleep-mode) for more information.)
-3. WiFi / BLE capabilities. You can really use microservices to make a huge system. For now, we focus on WiFi and especially
+2. WiFi / BLE capabilities. You can really use microservices to make a huge system. For now, we focus on WiFi and especially
    on the communication protocol [MQTT library](https://github.com/peterhinch/micropython-mqtt). MQTT is a messaging protocol
    that allows you to subscibe to topics and publish messages to a topic without too much hassle.
    For example, a temperature sensor publishes `30°C` on topic `/livingroom/temperature`, while the radiator is listening on
    the same topic. Therefore, the radiator can switch off when it receives the `30°C`.
-  ![content](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/MQTT-Diagram.png?w=750&quality=100&strip=all&ssl=1)
+   ![content](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/12/MQTT-Diagram.png?w=750&quality=100&strip=all&ssl=1)
 
-For the next assignment, we are going to connect with eachother via MQTT.
+## Assignment
 
-use the `umqtt.simple` library to log into the MQTT
-server [umqq.simple github page](https://github.com/micropython/micropython-lib/tree/master/micropython/umqtt.simple)
-login address and login password is shared on the screen.
+In the car project, we are going to communicate with eachother via MQTT. For this, use the `umqtt.simple` library to log into
+the MQTT server [umqq.simple github page](https://github.com/micropython/micropython-lib/tree/master/micropython/umqtt.simple)
+The login address and login password are shared on the screen. To check if your device is connected, a welcome message on the
+home topic `/home` has been published (retained).
 
-to check if your device is connected,
-a welcome message on the home topic `/home` has been published (retained)
+The goal of the assignment is to rotate the motor faster or slower (drive team) depending on the distance of an object to the sensor
+(sensor team), and visualize that speed with the LED-strips (feedback team). Subscribe to and publish on topics, make agreements
+together about how and what to publish.
 
-the goal is to get the motor speeding faster or slower with the input of the hand, and visualize the speed with the
-feedback ledstrips.
-Subscribe and publish on topics together, make agreements together about how and what to publish.
-
-Good luck! And I hope you enjoyed it :)
+Good luck! And I hope you enjoy it :)
 
 # Extra's
 
-## more used MQTT lib -> but more size
+## Other libraries
 
-[MQTT lib github](https://github.com/peterhinch/micropython-mqtt/tree/master/mqtt_as)
-
-## Importing Mip Packages
-
-[Micropython pip libery](https://github.com/micropython/micropython-lib)
-
+- More used MQTT library, but bigger [MQTT lib github](https://github.com/peterhinch/micropython-mqtt/tree/master/mqtt_as)
+- Installing Mip Packages [MicroPython pip library](https://github.com/micropython/micropython-lib)
