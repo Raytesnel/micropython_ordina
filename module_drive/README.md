@@ -3,7 +3,7 @@
 With this team, we are going to actuate a stepper motor. The goal is to make a script that awaits input from e.g. the
 user to actuate the motor with a specific speed or a certain distance/number of rotations.
 
-## List of materials:
+## List of materials
 
 - Stepper motor (nema 17)
 - 12V Power adapter
@@ -17,7 +17,7 @@ or
 - H-bridge module
 - Dupont cables (female - male 3x)
 
-## Board Stepper Motor
+## Explanation Stepper Motor Board
 
 For the stepper motor, you get a [TMC2209](https://learn.watterott.com/silentstepstick/pinconfig/tmc2209/) module
 attached to a developer board for stepper-drivers to make your life easier. It works as follows:
