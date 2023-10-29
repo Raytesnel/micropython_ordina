@@ -1,40 +1,38 @@
 # Feedback Team
 
-In this team we are going to light up some LED's .
-the goal is to make a script that awaits for input from for example the user to actuate the motor for a specific speed
-and distance/rotations.
+With this team, we are going to light up some LEDs. The goal is to make a script that waits for input
+from e.g. a user to actuate the motor for a specific speed and distance/rotations.
 
-## Sensor Requirements:
+## List of materials
 
-~10 individual addressable LEDS
+- ~10 individually addressable LEDS
 
-## Summary Individual Addressable LEDS
+## Explanation Individually Addressable LEDS
 
-on the leds there are 4 wires,
+On the LEDs there are 4 wires:
 
 - plus (red)
-- ground(black)
+- ground (black)
 - signal in (white)
 - signal out (yellow)
 
-what makes these leds different then normal leds?
+What makes these leds different from normal LEDs?
 
-- The microcontroller will send a list of parameters to the first led.
-- It will take the first item (and change is values,)
-    - (255,127,0) is corresponding to RGB --> full red, half green, no blue
-- The rest of the list will be passed on to the next led
-- this will be repeated till all leds has its command received
+- The microcontroller will send a list of values to the first LED. These are RGB-values, so e.g. (255, 127, 0)
+  corresponds with full red, half green, and no blue (resulting in orange).
+- The first LED will take and remove the first value.
+- The rest of the values will be passed on to the next LED.
+- This will repeat until all LEDs reveived their commands.
 
-with this you can make different fluent motions with the 3 colors combined.
-more info on a special lib of micropython and these leds
-[WS2812 LED](https://docs.micropython.org/en/latest/esp8266/tutorial/neopixel.html)
+With this you can make different fluent motions with the 3 colors combined. More info on a special MicroPython
+library and these leds [WS2812 LED](https://docs.micropython.org/en/latest/esp8266/tutorial/neopixel.html)
 
-## Summary Of Steps LEDS:
+## Guide
 
-- (bonus) import logging (see [importing mip packages](#importing-mip-packages) )
-- Make all leds turn one color (255 if full color 0 is no color for each RGB in the led)
+- (bonus) Import logging (see [Importing mip packages](https://github.com/Raytesnel/micropython_ordina/blob/main/README.md#other-libraries))
+- Turn all LEDs into one color (255 if full color, 0 is no color for each RGB in the LED)
 - Make a looping color change
-- Map the leds to a 0-100% with some user input
+- Map the LEDs to a 0-100% with some user input
 - Make it nice and colorfull :)
 
 [//]: # (## done? try the servo motor:)
@@ -72,4 +70,3 @@ more info on a special lib of micropython and these leds
 [//]: # ()
 
 [//]: # ([PWM micropython]&#40;https://docs.micropython.org/en/latest/esp32/tutorial/pwm.html&#41;)
-
