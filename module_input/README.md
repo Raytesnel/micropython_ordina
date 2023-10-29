@@ -1,29 +1,34 @@
 ## Input Team
 
-In this team we are going to make a sensor to measure the height from the sensor till the hand/object
-for this we use a Ultrasonic sensor
+With this team, we are going to make a sensor to measure the distance from the sensor to a hand/object. We will use an
+ultrasonic sensor for this.
 
-## Sensor Requirements:
+## List of Materials
 
-Ultrasonic sensor
+- Ultrasonic sensor
 
-## Summary Ultrasoon Hardware
+## Explanation Ultrasonic Sensor
 
-it is a pretty simple concept it will pusle a sound (ultrasonic) and try to receive the signal back, time between send
-and receive is the distance.
+The sensor is based on a pretty simple concept: the sensor pulses sound waves (in the ultrasonic frequencies). This signal
+will bounce back if it hits an object. The sensor tries to receive this echo, and measure the time between sending the
+signal and receiving its echo. The difference in time is used to calculate the distance from the sensor to the object.
+
 ![img.png](img.png)
 
-distance to an object = ((speed of sound in the air(343.2 m/s))*time)/2
-pinout:
+The distance from the sensor to an object equals $( speed * time ) / 2$, where $speed$ is the speed of sound in air,
+which is about 343.2 m/s.
 
-- vcc-> + (5v or 3.3v)
-- trig -> is the trigger to transmit the signal (`high` is sending wave, `low` is stop sending wave)
-- Echo -> is the input pin, that will go from `low` to `high` when it receives somthing
+The pins on the board are:
+
+- vcc -> + (5v or 3.3v)
+- trig -> trigger to transmit the signal (`high` is sending wave, `low` is stop sending wave)
+- echo -> input pin, that will go from `low` to `high` when it receives something
 - GND -> Ground
 
-## Summary Of Steps Ultrasoon Sensor:
+## Guide
 
+- (bonus) Import logging (see [Importing mip packages](https://github.com/Raytesnel/micropython_ordina/blob/main/README.md#other-libraries))
 - Setup all pins and be able to send a sound wave (10ms or so)
-- Setup a timer that will start when you start stransmitting and stop when you pin go to high see: (time
+- Setup a timer that will start when you start transmitting and stop when the pin goes to high. See: (time
   pulse)[https://docs.micropython.org/en/latest/library/machine.html#machine.time_pulse_us]
-- calculate the distance and return it (check if you have a `time out`, for wrong distances)
+- Calculate the distance and return it (check if you have a `time out`, for wrong distances)
