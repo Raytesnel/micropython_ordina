@@ -50,8 +50,9 @@ This guide is not mandatory, but may help you in finishing the task:
 - Make the timing of the callback timer faster or slower (speeding up or slowing down)
 - Make the callback timer stop when certain distance is achieved
 
-Good luck, you can start for your self from here. (Hint: as we changed the led to ON or OFF in the 'Hello World'-exercise,
-we changed the pin state to LOW(0) or HIGH(1).)
+Good luck, you can start for your self from here.
+
+Hint: as we changed the led to ON or OFF in the 'Hello World'-exercise, we changed the pin state to LOW(0) or HIGH(1).
 
 [//]: # (## done? try the DC motor)
 
