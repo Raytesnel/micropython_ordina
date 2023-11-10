@@ -19,7 +19,7 @@ or
 
 ## Explanation Stepper Motor Board
 
-For the stepper motor, you get a [TMC2209](https://learn.watterott.com/silentstepstick/pinconfig/tmc2209/) module
+For the stepper motor, you get a [TMC2208](https://wiki.fysetc.com/TMC2208/#motor-current-setting) module
 attached to a developer board for stepper-drivers to make your life easier. It works as follows:
 
 - dir(rection) pin: give a low or high input to rotate left or right.
