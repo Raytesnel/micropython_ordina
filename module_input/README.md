@@ -27,7 +27,7 @@ The pins on the board are:
 
 ## Guide
 
-- (bonus) Import logging (see [Importing mip packages](https://github.com/Raytesnel/micropython_ordina/blob/main/README.md#other-libraries))
+- (bonus) Import logging, see [Importing mip packages](https://github.com/Raytesnel/micropython_ordina/blob/main/README.md#other-libraries)
 - Setup all pins and be able to send a sound wave (10ms or so)
 - Setup a timer that will start when you start transmitting and stop when the pin goes to high. See: (time
   pulse)[https://docs.micropython.org/en/latest/library/machine.html#machine.time_pulse_us]
