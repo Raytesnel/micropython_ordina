@@ -14,7 +14,6 @@ On the LEDs there are 4 wires:
 - plus (red)
 - ground (black)
 - signal in (white)
-- signal out (yellow)
 
 What makes these leds different from normal LEDs?
 
