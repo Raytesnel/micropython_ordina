@@ -1,4 +1,4 @@
-# MicroPython Ordina
+# MicroPython
 
 A nice demo day about MicroPython with the use of ESP32 boards.
 
